@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.dom.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Company Showcase </h1>
+            <p class="subtitle">Vector Graphics (SVG) Explorer</p>
+        </header>
+        
+        <div class="app-container">
+            <div class="control-panel">
+                <h2>Projects</h2>
+                
+                <div class="file-upload">
+                    <div class="section-title">Load new SVG files</div>
+                    <input type="file" id="svg-upload" class="file-input" accept=".svg" multiple>
+                    <div style="font-size: 0.9rem; color: #90AB8B; margin-top: 8px;">
+                        You can choose multiple files at once 
+                    </div>
+                </div>
+                
+                <div class="project-list">
+                    <div class="section-title">Available Projects</div>
+                    <div id="projects-container">
+                        <!-- Projekty będą dodawane dynamicznie -->
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button id="prev-btn" disabled>← Previous</button>
+                    <button id="next-btn" disabled>Next →</button>
+                    <button id="zoom-in-btn">Zoom - in +</button>
+                    <button id="zoom-out-btn">Zoom - out -</button>
+                    <button id="reset-view-btn">Reset view</button>
+                    <button id="rotate-btn">Rotate (90°) ⟳</button>
+                    <button id="download-btn" class="download-button">Download SVG ↓</button>
+                </div>
+            </div>
+            
+            <div class="viewer-container">
+                <h2>Project showcase</h2>
+                <div class="current-project-title" id="current-project-title">Choose project from the list</div>
+                <div class="canvas-container">
+                    <div id="p5-canvas"></div>
+                    <div class="loading" id="loading-indicator">SVG loading</div>
+                    <div class="zoom-info" id="zoom-info">Size: 100%</div>
+                </div>
+                <div class="project-info">
+                    <div class="section-title">Project Information</div>
+                    <div id="project-details">
+                        <p>Select project on the left for more details</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>Instructions</h3>
+            <ul>
+                <li><strong>Loading SVG Files:</strong> Use the "Choose Files" button to add new designs to your portfolio.</li>
+<li><strong>Browsing Designs:</strong> Click on a design from the list to view it. You can also use the "Previous/Next" buttons.</li>
+<li><strong>Interacting with the Graphic:</strong> Drag the mouse to move the graphic. Use the mouse wheel or the +/- buttons to change the zoom.</li>
+<li><strong>Rotation:</strong> Use the "Rotate" button to rotate the graphic 90 degrees.</li>
+<li><strong>Reset View:</strong> The "Reset View" button restores the default zoom and position settings.</li>
+<li><strong>Download:</strong> Use the "Download SVG" button to save the current design to your computer.</li>
+            </ul>
+        </div>
+        
+        <!-- DODANA SEKCJA KONTAKTOWA -->
+        <div class="contact-section">
+            <h3>Contact Information</h3>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <h4>Phone Number</h4>
+                        <p>+48 123 456 789</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-details">
+                        <h4>Email Address</h4>
+                        <p>contact@companyshowcase.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h4>Office Address</h4>
+                        <p>ul. Przykładowa 123<br>00-001 Warszawa, Polska</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🕒</div>
+                    <div class="contact-details">
+                        <h4>Business Hours</h4>
+                        <p>Monday - Friday: 9:00-17:00<br>Saturday: 10:00-14:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Company Showcase | Discover our skills! </p>
+        </footer>
+        
+        <div class="notification" id="notification">
+            SVG loaded succesfully
+        </div>
+    </div>
+
+    <script src="sketch.js"></script>
+</body>
+</html>
