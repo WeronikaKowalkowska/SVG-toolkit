@@ -110,26 +110,6 @@ All applications support vector-based graphics to ensure:
 
 ---
 
-##  How to Run
-
-### Desktop App
-
-1. Install Processing.
-2. Open the main project file.
-3. Run the sketch.
-
-### Mobile App
-
-1. Install Android Studio.
-2. Connect an Android device or use an emulator.
-3. Build and run the project.
-
-### Web App
-
-1. Open the `index.html` file in a browser
-
----
-
 ## Project Structure
 
 ```
